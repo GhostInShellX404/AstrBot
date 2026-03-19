@@ -2582,6 +2582,34 @@ CONFIG_METADATA_2 = {
                             },
                         },
                     },
+                    "smart_switch": {
+                        "type": "object",
+                        "items": {
+                            "enable": {
+                                "type": "bool",
+                            },
+                            "judge_model": {
+                                "type": "string",
+                            },
+                            "model_pool": {
+                                "type": "object",
+                                "items": {
+                                    "writing": {
+                                        "type": "list",
+                                        "items": {"type": "string"},
+                                    },
+                                    "coding": {
+                                        "type": "list",
+                                        "items": {"type": "string"},
+                                    },
+                                    "daily": {
+                                        "type": "list",
+                                        "items": {"type": "string"},
+                                    },
+                                },
+                            },
+                        },
+                    },
                 },
             },
             "provider_stt_settings": {
