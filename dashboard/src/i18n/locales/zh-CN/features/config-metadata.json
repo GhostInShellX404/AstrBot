@@ -51,6 +51,30 @@
         },
         "image_caption_prompt": {
           "description": "图片转述提示词"
+        },
+        "smart_switch": {
+          "enable": {
+            "description": "启用智能切换",
+            "hint": "根据任务复杂度自动选择合适的模型"
+          },
+          "judge_model": {
+            "description": "裁判模型",
+            "hint": "用于评估每次任务的复杂度"
+          },
+          "model_pool": {
+            "writing": {
+              "description": "写作模型池",
+              "hint": "用于写作类任务（如文章创作、文案撰写等）"
+            },
+            "coding": {
+              "description": "编码模型池",
+              "hint": "用于编程任务（如代码生成、调试等）"
+            },
+            "daily": {
+              "description": "日常工作模型池",
+              "hint": "用于日常对话和通用任务"
+            }
+          }
         }
       },
       "provider_stt_settings": {

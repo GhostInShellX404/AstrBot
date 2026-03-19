@@ -51,6 +51,30 @@
         },
         "image_caption_prompt": {
           "description": "Image Caption Prompt"
+        },
+        "smart_switch": {
+          "enable": {
+            "description": "Enable Smart Switching",
+            "hint": "Automatically select the appropriate model based on task complexity"
+          },
+          "judge_model": {
+            "description": "Judge Model",
+            "hint": "Used to evaluate the complexity of each task"
+          },
+          "model_pool": {
+            "writing": {
+              "description": "Writing Model Pool",
+              "hint": "Used for writing tasks (e.g., article creation, copywriting)"
+            },
+            "coding": {
+              "description": "Coding Model Pool",
+              "hint": "Used for programming tasks (e.g., code generation, debugging)"
+            },
+            "daily": {
+              "description": "Daily Work Model Pool",
+              "hint": "Used for daily conversations and general tasks"
+            }
+          }
         }
       },
       "provider_stt_settings": {

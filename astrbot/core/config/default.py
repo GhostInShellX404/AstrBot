@@ -142,6 +142,15 @@ DEFAULT_CONFIG = {
             "shipyard_neo_profile": "python-default",
             "shipyard_neo_ttl": 3600,
         },
+        "smart_switch": {
+            "enable": False,
+            "judge_model": "",
+            "model_pool": {
+                "writing": [],
+                "coding": [],
+                "daily": [],
+            },
+        },
     },
     # SubAgent orchestrator mode:
     # - main_enable = False: disabled; main LLM mounts tools normally (persona selection).
@@ -2873,6 +2882,54 @@ CONFIG_METADATA_3 = {
                     "provider_settings.image_caption_prompt": {
                         "description": "图片转述提示词",
                         "type": "text",
+                    },
+                    "provider_settings.smart_switch.enable": {
+                        "description": "启用智能切换",
+                        "type": "bool",
+                        "hint": "根据任务复杂度自动选择合适的模型",
+                    },
+                    "provider_settings.smart_switch.judge_model": {
+                        "description": "裁判模型",
+                        "type": "string",
+                        "_special": "select_provider",
+                        "hint": "用于评估每次任务的复杂度",
+                        "condition": {
+                            "provider_settings.smart_switch.enable": True,
+                            "provider_settings.enable": True,
+                        },
+                    },
+                    "provider_settings.smart_switch.model_pool.writing": {
+                        "description": "写作模型池",
+                        "type": "list",
+                        "items": {"type": "string"},
+                        "_special": "select_providers",
+                        "hint": "用于写作类任务（如文章创作、文案撰写等）",
+                        "condition": {
+                            "provider_settings.smart_switch.enable": True,
+                            "provider_settings.enable": True,
+                        },
+                    },
+                    "provider_settings.smart_switch.model_pool.coding": {
+                        "description": "编码模型池",
+                        "type": "list",
+                        "items": {"type": "string"},
+                        "_special": "select_providers",
+                        "hint": "用于编程任务（如代码生成、调试等）",
+                        "condition": {
+                            "provider_settings.smart_switch.enable": True,
+                            "provider_settings.enable": True,
+                        },
+                    },
+                    "provider_settings.smart_switch.model_pool.daily": {
+                        "description": "日常工作模型池",
+                        "type": "list",
+                        "items": {"type": "string"},
+                        "_special": "select_providers",
+                        "hint": "用于日常对话和通用任务",
+                        "condition": {
+                            "provider_settings.smart_switch.enable": True,
+                            "provider_settings.enable": True,
+                        },
                     },
                 },
                 "condition": {
