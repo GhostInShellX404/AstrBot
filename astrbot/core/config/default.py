@@ -2914,13 +2914,13 @@ CONFIG_METADATA_3 = {
                     "provider_settings.smart_switch.enable": {
                         "description": "启用智能切换",
                         "type": "bool",
-                        "hint": "根据任务复杂度自动选择合适的模型",
+                        "hint": "根据问题类型和复杂度，在写作、编码、日常模型池之间自动路由",
                     },
                     "provider_settings.smart_switch.judge_model": {
                         "description": "裁判模型",
                         "type": "string",
                         "_special": "select_provider",
-                        "hint": "用于评估每次任务的复杂度",
+                        "hint": "规则无法明确分类时，用它补充判断当前请求更适合哪类模型池",
                         "condition": {
                             "provider_settings.smart_switch.enable": True,
                             "provider_settings.enable": True,

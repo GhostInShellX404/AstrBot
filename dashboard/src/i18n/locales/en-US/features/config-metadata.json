@@ -55,11 +55,11 @@
         "smart_switch": {
           "enable": {
             "description": "Enable Smart Switching",
-            "hint": "Automatically select the appropriate model based on task complexity"
+            "hint": "Automatically route requests between writing, coding, and daily model pools based on intent and complexity"
           },
           "judge_model": {
             "description": "Judge Model",
-            "hint": "Used to evaluate the complexity of each task"
+            "hint": "Used as a fallback classifier when rules cannot confidently determine the best model pool"
           },
           "model_pool": {
             "writing": {
